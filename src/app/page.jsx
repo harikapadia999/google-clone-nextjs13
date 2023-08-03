@@ -1,4 +1,5 @@
 import React from 'react'
+import HomeHeader from './components/HomeHeader'
 
 export default function Home() {
   return (
@@ -7,7 +8,9 @@ export default function Home() {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <meta name="description" content="Google clone created by Next js 13" />
         <link rel="icon" href="/favicon.svg" />
-      <div className='text-red-600 text-3xl'>Home</div>
+      <>
+        <HomeHeader/>
+      </>
     </div>
   )
 }
