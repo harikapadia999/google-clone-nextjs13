@@ -36,6 +36,7 @@ export default function SearchBox() {
         className="text-2xl hidden sm:inline-flex text-blue-500 cursor-pointer"
         onClick={handleSubmit}
       />
+      <div></div>
     </form>
   );
 }
