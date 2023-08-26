@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
 
-export default function CountryLoopUp() {
+import { useEffect, useState } from "react";
+
+export default function CountryLookup() {
   const [country, setCountry] = useState("United States");
   useEffect(() => {
     fetch(

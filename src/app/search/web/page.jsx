@@ -1,18 +1,21 @@
-import WebSearchResults from "@/app/components/WebSearchResults";
+export const dynamic = "force-dynamic";
+
+import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
-import { resolve } from "styled-jsx/css";
 
 export default async function WebSearchPage({ searchParams }) {
-  await new Promise((resolve) => setTimeout(resolve, 10000));
+  const startIndex = searchParams.start || "1";
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const response = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}}`
+    `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}}&start=${startIndex}`
   );
-  if (!response.ok) {
-    throw new Error("worng");
-  }
-  const data = await response.json();
 
-  console.log(data);
+  if (!response.ok) {
+    console.log(response);
+    throw new Error("Something went wrong");
+  }
+
+  const data = await response.json();
 
   const results = data.items;
 
@@ -21,14 +24,13 @@ export default async function WebSearchPage({ searchParams }) {
       <div className="flex flex-col justify-center items-center pt-10">
         <h1 className="text-3xl mb-4">No results found</h1>
         <p className="text-lg">
-          Try searching for something else or go back to the homepage.{" "}
+          Try searching for something else or go back to the homepage{" "}
+          <Link href="/" className="text-blue-500">
+            Home
+          </Link>
         </p>
-        <Link href="/" className="text-blue-500">
-          Home
-        </Link>
       </div>
     );
   }
-
   return <>{results && <WebSearchResults results={data} />}</>;
 }

@@ -1,19 +1,18 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillMicFill } from "react-icons/bs";
-import { useRouter } from "next/navigation";
 export default function HomeSearch() {
   const router = useRouter();
   const [input, setInput] = useState("");
   const [randomSearchLoading, setRandomSearchLoading] = useState(false);
-
   function handleSubmit(e) {
     e.preventDefault();
     if (!input.trim()) return;
     router.push(`/search/web?searchTerm=${input}`);
   }
-
   async function randomSearch() {
     setRandomSearchLoading(true);
     const response = await fetch("https://random-word-api.herokuapp.com/word")
@@ -23,7 +22,6 @@ export default function HomeSearch() {
     router.push(`/search/web?searchTerm=${response}`);
     setRandomSearchLoading(false);
   }
-
   return (
     <>
       <form
@@ -32,30 +30,31 @@ export default function HomeSearch() {
       >
         <AiOutlineSearch className="text-xl text-gray-500 mr-3" />
         <input
-          onChange={(e) => setInput(e.target.value)}
-          value={input}
           type="text"
           className="flex-grow focus:outline-none"
+          onChange={(e) => setInput(e.target.value)}
+          value={input}
         />
         <BsFillMicFill className="text-lg" />
       </form>
-      <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 justify-center sm:flex-row mt-8">
+
+      <div className="flex flex-col space-y-2 sm:space-y-0 sm:space-x-4 justify-center sm:flex-row mt-8 ">
         <button onClick={handleSubmit} className="btn">
           Google Search
         </button>
         <button
-          onClick={randomSearch}
           disabled={randomSearchLoading}
+          onClick={randomSearch}
           className="btn flex items-center justify-center disabled:opacity-80"
         >
           {randomSearchLoading ? (
             <img
               src="spinner.svg"
               alt="loading..."
-              className="h-10 text-center"
+              className="h-6 text-center"
             />
           ) : (
-            "I'm Feeling Lucky"
+            "I am Feeling Lucky"
           )}
         </button>
       </div>

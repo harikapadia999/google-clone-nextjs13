@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import SearchBox from "./SearchBox";
 import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
@@ -9,7 +8,7 @@ import SearchHeaderOptions from "./SearchHeaderOptions";
 export default function SearchHeader() {
   return (
     <header className="sticky top-0 bg-white">
-      <div className="flex w-full p-6 items-center justify-between ">
+      <div className="flex w-full p-6 items-center justify-between">
         <Link href={"/"}>
           <Image
             width="120"
