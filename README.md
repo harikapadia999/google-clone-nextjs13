@@ -1,4 +1,9 @@
 ![Screenshot 2023-08-27 112942](https://github.com/harikapadia999/google-clone-nextjs13/assets/99083489/bf3fc5a7-846d-4f32-a943-548aaeb991d8)
+
+![Screenshot 2023-08-27 182630](https://github.com/harikapadia999/google-clone-nextjs13/assets/99083489/c51d2883-52a7-4fe4-acea-a26bb41b5f95)
+
+![Screenshot 2023-08-27 182702](https://github.com/harikapadia999/google-clone-nextjs13/assets/99083489/a39c011c-45a4-427e-8a63-2939838f3cf8)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
