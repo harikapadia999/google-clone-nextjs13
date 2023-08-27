@@ -1,3 +1,4 @@
+![Screenshot 2023-08-27 112942](https://github.com/harikapadia999/google-clone-nextjs13/assets/99083489/bf3fc5a7-846d-4f32-a943-548aaeb991d8)
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
