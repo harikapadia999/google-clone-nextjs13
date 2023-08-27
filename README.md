@@ -37,7 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 
-![Screenshot 2023-08-27 112942](https://github.com/harikapadia999/google-clone-nextjs13/assets/99083489/faa82c66-bbea-4219-a3e9-5d89c76b6e7b)
+
 
 
 
